@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+<LinearLayout
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:weightSum="1">
+    <include android:id="@+id/tbIncludeloginpage"
+        layout="@layout/toolbar"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="390dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:background="@android:color/white"
+                android:paddingTop="20dp"
+                android:layout_weight="0.16">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Login"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="30dp"
+                    android:textColor="@color/colorPrimary"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tvEmailloginpage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp">
+
+                    <EditText
+                        android:id="@+id/etEmailloginpage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:hint="Email or phone no"
+                        android:inputType="textEmailAddress"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tvPasswordloginpage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/etPasswordloginpage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:hint="password" />
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="By logging in, you agree to our Terms and Conditions and Privacy Policy "
+                    android:layout_marginTop="20dp"
+                    />
+                <Button android:id="@+id/bLoginloginpage"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lets GO"
+                    android:background="@color/colorPrimary"
+                    android:layout_marginTop="17dp"
+                    android:textColor="@android:color/white"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bForgotpasswordloginpage"
+                    android:text="Forot Password?"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="14dp"
+                    android:textColor="#335bdd" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Login with Facebook"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:background="#3b5998"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/bFbloginpage"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Login with Google"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:background="#dd4b39"
+            android:id="@+id/bGoogleloginpage"/>
+    </LinearLayout>
+</LinearLayout>
+    <ProgressBar
+        android:id="@+id/pbLoginpage"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:maxHeight="20dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/progressbar_background"
+        android:progressDrawable="@drawable/progressbar_default"
+        />
+</RelativeLayout>

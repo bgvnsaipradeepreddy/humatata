@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <include android:id="@+id/tbIncludeAskQuery"
+        layout="@layout/toolbar_button"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:scrollbars="horizontal"
+            android:id="@+id/trAskQuery"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            >
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/ibImageAskQuery"
+                android:layout_weight="1"
+                android:layout_marginRight="-4.5dp"
+                android:layout_marginLeft="-4.5dp"
+                android:src="@drawable/insertimage_icon"
+                />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="-4.5dp"
+                android:layout_marginLeft="-4.5dp"
+                android:layout_weight="1"
+                android:id="@+id/ibBoldAskQuery"
+                android:src="@drawable/bold_icon"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="-4.5dp"
+                android:layout_marginLeft="-4.5dp"
+                android:layout_weight="1"
+                android:id="@+id/ibItalicAskQuery"
+                android:src="@drawable/italic_icon"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="-4.5dp"
+                android:layout_marginLeft="-4.5dp"
+                android:layout_weight="1"
+                android:id="@+id/ibUnderlineAskQuery"
+                android:src="@drawable/underline_icon"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/ibHyperlinkAskQuery"
+                android:layout_weight="1"
+                android:layout_marginRight="-4.5dp"
+                android:layout_marginLeft="-4.5dp"
+                android:src="@drawable/hyperlink_icon"
+                />
+
+
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/llAskQuery"
+            android:background="@android:color/white"
+            android:layout_above="@+id/trAskQuery"
+            android:orientation="vertical"
+            android:scrollbars="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/etTitleAskQuery"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:inputType="textNoSuggestions"
+                android:background="@android:color/transparent"
+                android:hint="Title"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/etQueryAskQuery"
+                android:background="@android:color/transparent"
+                android:hint="Ask your question?"
+                android:textSize="17dp"
+                android:gravity="start"
+                android:inputType="textNoSuggestions|textMultiLine"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+
+                />
+
+        </LinearLayout>
+        <ProgressBar
+            android:id="@+id/pbAskQuery"
+            android:layout_width="80dip"
+            android:layout_height="80dip"
+            android:maxHeight="20dp"
+            android:visibility="invisible"
+            android:layout_centerInParent="true"
+            android:background="@drawable/progressbar_background"
+            android:progressDrawable="@drawable/progressbar_default"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

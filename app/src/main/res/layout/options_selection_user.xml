@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:pradeep="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    pradeep:id="@+id/llUserSelectionOptions"
+    pradeep:layout_width="match_parent"
+    pradeep:layout_height="match_parent"
+    pradeep:orientation="vertical"
+    pradeep:fitsSystemWindows="true">
+    <include pradeep:id="@+id/tbIncludeUserSelectionOptions"
+        layout="@layout/toolbar"/>
+    <android.support.v4.widget.DrawerLayout
+        pradeep:id="@+id/dlUserSelectionOptions"
+        pradeep:layout_width="match_parent"
+        pradeep:layout_height="match_parent">
+        <FrameLayout
+            pradeep:id="@+id/fldlUserSelectionOptions"
+            pradeep:layout_width="match_parent"
+            pradeep:layout_height="462dp">
+        </FrameLayout>
+        <ListView pradeep:id="@+id/lvdlUserSelectionOptions"
+            pradeep:layout_width="250dp"
+            pradeep:layout_height="match_parent"
+            pradeep:layout_gravity="start"
+            pradeep:choiceMode="singleChoice"
+            pradeep:divider="@android:color/black"
+            pradeep:dividerHeight="0.5dp"
+            pradeep:background="@color/colorPrimary" />
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

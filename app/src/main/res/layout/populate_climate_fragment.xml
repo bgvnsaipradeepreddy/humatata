@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="15dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/tvDateFragmentClimatePopulate"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivFragmentClimatePopulate"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvDateFragmentClimatePopulate"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvNameFragmentClimatePopulate"
+        android:layout_below="@+id/tvDateFragmentClimatePopulate"
+        android:layout_toEndOf="@+id/ivFragmentClimatePopulate"
+        android:textSize="18dp"
+        android:paddingLeft="10dp"
+        android:text="sai"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/tvDataFragmentClimatePopulate"
+        android:layout_below="@+id/ivFragmentClimatePopulate"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/black"
+        android:textSize="18dp"
+        android:clickable="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comments"
+        android:id="@+id/tvCommentsFragmentClimatePopulate"
+        android:background="#d8d8d8"
+        android:textSize="13dp"
+        android:layout_below="@+id/tvDataFragmentClimatePopulate"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        android:textSize="13dp"
+        android:background="#d8d8d8"
+        android:id="@+id/commentcount"
+        android:layout_alignTop="@+id/tvCommentsFragmentClimatePopulate"
+        android:layout_marginLeft="1dp"
+        android:layout_toEndOf="@+id/tvCommentsFragmentClimatePopulate" />
+
+
+
+    <!--<ImageButton
+        android:layout_width="25dip"
+        android:layout_height="25dip"
+        android:id="@+id/ivbookmark"
+        android:background="@android:color/white"
+        android:src="@drawable/ivbookmark"
+        android:clickable="true"
+        android:layout_alignBottom="@+id/commentcount"
+        android:layout_alignParentEnd="true" />-->
+
+</RelativeLayout>

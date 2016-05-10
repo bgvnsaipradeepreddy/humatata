@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="15dp"
+    android:layout_marginBottom="10dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/tvDatePopulateQueries"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivPopulateQueries"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvDatePopulateQueries"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvNamePopulateQueries"
+        android:layout_below="@+id/tvDatePopulateQueries"
+        android:layout_toEndOf="@+id/ivPopulateQueries"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/tvQueryPopulateQueries"
+        android:text="giri venkata nagendra sai pradeep reddy"
+        android:layout_below="@+id/ivPopulateQueries"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:clickable="true"/>
+    <com.hakunamatata.pradeep.noworries.ExpandableTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I have a food plus card where can i find a store in tirupati where i can buy both electronic good and also food items. many shops where not accepting this kind of cards. Please suggest something. Even if someone can use this foodplus cards and provide the money"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:textColor="@android:color/black"
+        android:id="@+id/etvDescriptionPopulateQueries"
+        android:layout_below="@+id/tvQueryPopulateQueries"
+        android:layout_alignParentStart="true"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comments"
+        android:id="@+id/tvCommentsPopulateQueries"
+        android:background="#d8d8d8"
+        android:textSize="13dp"
+        android:layout_below="@+id/etvDescriptionPopulateQueries"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        android:textSize="13dp"
+        android:background="#d8d8d8"
+        android:id="@+id/commentcount"
+        android:layout_alignTop="@+id/tvCommentsPopulateQueries"
+        android:layout_marginLeft="1dp"
+        android:layout_toEndOf="@+id/tvCommentsPopulateQueries"
+        android:textStyle="bold"/>
+
+
+
+</RelativeLayout>

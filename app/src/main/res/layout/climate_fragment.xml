@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e4dbdb"
+    android:scrollbars="vertical">
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvFragmentClimate"
+        android:background="#ffffff"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pbFragmentClimate"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

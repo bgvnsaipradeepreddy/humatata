@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hakunamatata.pradeep.noworries">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainPage">
+            <intent-filter>
+                <action android:name="com.hakunamatata.pradeep.noworries.MAINPAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".LoginPage">
+            <intent-filter>
+                <action android:name="com.hakunamatata.pradeep.noworries.LOGINPAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".RegisterPage">
+            <intent-filter>
+                <action android:name="com.hakunamatata.pradeep.noworries.REGISTERPAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".UserHomePage">
+            <intent-filter>
+                <action android:name="com.hakunamatata.pradeep.noworries.USERHOMEPAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".UserRegisterOption">
+            <intent-filter>
+                <action android:name="com.hakunamatata.pradeep.noworries.USERREGISTEROPTION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".UserSelectPlaces">
+            <intent-filter>
+                <action android:name="com.hakunamatata.pradeep.noworries.USERSELECTPLACES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".UserSelectionOptions">
+            <intent-filter>
+                <action android:name="com.hakunamatata.pradeep.noworries.USERSELECTIONOPTIONS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".UserEntities">
+            <intent-filter>
+                <action android:name="com.hakunamatata.pradeep.noworries.USERENTITIES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".UserProfile">
+            <intent-filter>
+                <action android:name="com.hakunamatata.pradeep.noworries.USERPROFILE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".AskQuery">
+            <intent-filter>
+                <action android:name="com.hakunamatata.pradeep.noworries.ASKQUERY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".AskEmergencyHelp">
+            <intent-filter>
+                <action android:name="com.hakunamatata.pradeep.noworries.ASKEMERGENCYHELP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".AddPlaceInformation">
+            <intent-filter>
+                <action android:name="com.hakunamatata.pradeep.noworries.ADDPLACEINFORMATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+    </application>
+
+</manifest>

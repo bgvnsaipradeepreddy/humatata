@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/tvTemFragmentClimate"
+            android:textSize="50dp"
+            android:textColor="@android:color/white"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/tvInfoFragmentClimate"
+            android:textSize="15dp"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/tvTemFragmentClimate"
+            android:layout_centerHorizontal="true" />
+
+
+    </RelativeLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/etadd"
+        android:layout_margin="7dp"
+        android:background="@drawable/border_layout"
+        android:textSize="15dp"
+        android:textColorHint="@android:color/white"
+        android:hint="Add something about this place"
+        android:focusable="false"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
+
+
+
+

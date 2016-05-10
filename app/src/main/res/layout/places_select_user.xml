@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <include android:id="@+id/tbIncludeUserSelectPlaces"
+        layout="@layout/toolbar"/>
+    <ExpandableListView
+        android:id="@+id/elvUserSelectPlaces"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/tbIncludeUserSelectPlaces" />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:id="@+id/bUserSelectPlaces"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ProgressBar
+        android:id="@+id/pbUserSelectPlaces"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:maxHeight="20dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/progressbar_background"
+        android:progressDrawable="@drawable/progressbar_default"
+        />
+
+</RelativeLayout>

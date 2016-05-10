@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <include android:id="@+id/tbIncludeUserProfile"
+        layout="@layout/toolbar_button"/>
+    <ScrollView
+        android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#d8d8d8"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:background="@android:color/white"
+                android:paddingTop="30dp"
+                android:layout_weight="0.16">
+
+                <ImageButton
+                    android:layout_width="71dp"
+                    android:layout_height="66dp"
+                    android:id="@+id/ibUserProfile"
+                    android:src="@drawable/myprofile"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimary"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tvNameUserProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <EditText
+                        android:id="@+id/etNameUserProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Name"
+                        android:inputType="textEmailAddress"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tvPhoneNoUserProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <EditText
+                        android:id="@+id/etPhoneNoUserProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:hint="Phone no" />
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tvAgeUserProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/etAgeUserProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="Age" />
+                </android.support.design.widget.TextInputLayout>
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/rgUserProfile"
+                    android:paddingBottom="10dp">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="male"
+                        android:checked="true"
+                        android:id="@+id/rbMaleUserProfile" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="female"
+                        android:id="@+id/rbFemaleUserProfile" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:background="@android:color/white"
+                android:paddingTop="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvCountUserProfile"
+                    android:layout_gravity="right" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tvBiographyUserProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:hint="Biography(eg:Dreamer,learner)"
+                        android:id="@+id/etBiographyUserProfile"
+                        android:maxLength="120"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tvProfessionUserProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+
+                        android:hint="Profession"
+                        android:id="@+id/etProfessionUserProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tvDescriptionUserProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:hint="About yourself"
+                        android:id="@+id/etDescriptionUserProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
