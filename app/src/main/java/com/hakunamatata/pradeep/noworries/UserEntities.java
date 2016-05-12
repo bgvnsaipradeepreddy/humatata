@@ -54,10 +54,10 @@ public class UserEntities extends AppCompatActivity {
 
         tabLayout.addTab(tabLayout.newTab().setText("Ask"));
         tabLayout.addTab(tabLayout.newTab().setText("Emergency Help"));
-        tabLayout.addTab(tabLayout.newTab().setText("Trivia"));
         tabLayout.addTab(tabLayout.newTab().setText("Events"));
         tabLayout.addTab(tabLayout.newTab().setText("Deals"));
         tabLayout.addTab(tabLayout.newTab().setText("ChatRoom"));
+        tabLayout.addTab(tabLayout.newTab().setText("Trivia"));
         //tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         PagerAdapter adapter = new PagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());
@@ -131,7 +131,7 @@ public class UserEntities extends AppCompatActivity {
                     return FragmentEmergencyHelp.newInstance(userId,placeId,selectedPlace);
                 case 2:
                     //return FragmentClimate.newInstance(userId,selectedPlace);
-                    return FragmentClimate.newInstance(userId,placeId,selectedPlace);
+                    return FragmentEvent.newInstance(userId,placeId,selectedPlace);
                 case 3:
                     //return FragmentEvent.newInstance(userId,selectedPlace);
                     return FragmentQuery.newInstance(userId,placeId,selectedPlace);
@@ -140,7 +140,7 @@ public class UserEntities extends AppCompatActivity {
                     return FragmentQuery.newInstance(userId,placeId,selectedPlace);
                 case 5:
                     //return FragmentChatRoom.newInstance(userId,selectedPlace);
-                    return FragmentQuery.newInstance(userId,placeId,selectedPlace);
+                    return FragmentClimate.newInstance(userId,placeId,selectedPlace);
                 default:
                     return null;
             }

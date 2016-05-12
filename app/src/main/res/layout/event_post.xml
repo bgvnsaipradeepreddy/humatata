@@ -5,7 +5,7 @@
     android:orientation="vertical"
     >
 
-    <include android:id="@+id/tbIncludeAskQuery"
+    <include android:id="@+id/tbIncludePostEvent"
         layout="@layout/toolbar_button"/>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,14 +18,15 @@
             android:orientation="horizontal"
             android:layout_alignParentBottom="true"
             android:scrollbars="horizontal"
-            android:id="@+id/trAskQuery"
+            android:id="@+id/trPostEvent"
             android:layout_weight="1"
+            android:background="@android:color/white"
             android:visibility="invisible"
             >
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/ibImageAskQuery"
+                android:id="@+id/ibImagePostEvent"
                 android:layout_weight="1"
                 android:layout_marginRight="-4.5dp"
                 android:layout_marginLeft="-4.5dp"
@@ -37,29 +38,29 @@
                 android:layout_marginRight="-4.5dp"
                 android:layout_marginLeft="-4.5dp"
                 android:layout_weight="1"
-                android:id="@+id/ibBoldAskQuery"
+                android:id="@+id/ibBoldPostEvent"
                 android:src="@drawable/bold_icon"/>
-
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="-4.5dp"
                 android:layout_marginLeft="-4.5dp"
                 android:layout_weight="1"
-                android:id="@+id/ibItalicAskQuery"
-                android:src="@drawable/italic_icon"/>
+                android:src="@drawable/italic_icon"
+                android:id="@+id/ibItalicPostEvent" />
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="-4.5dp"
                 android:layout_marginLeft="-4.5dp"
                 android:layout_weight="1"
-                android:id="@+id/ibUnderlineAskQuery"
-                android:src="@drawable/underline_icon"/>
+                android:src="@drawable/underline_icon"
+                android:id="@+id/ibUnderlinePostEvent"
+                />
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/ibHyperlinkAskQuery"
+                android:id="@+id/ibHyperlinkPostEvent"
                 android:layout_weight="1"
                 android:layout_marginRight="-4.5dp"
                 android:layout_marginLeft="-4.5dp"
@@ -68,25 +69,24 @@
 
 
         </TableRow>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/llAskQuery"
+            android:id="@+id/llPostEvent"
             android:background="@android:color/white"
-            android:layout_above="@+id/trAskQuery"
+            android:layout_above="@+id/trPostEvent"
             android:orientation="vertical"
             android:scrollbars="vertical">
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/etTitleAskQuery"
+                android:id="@+id/etTitlePostEvent"
                 android:textSize="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:inputType="textNoSuggestions|textMultiLine"
+                android:inputType="textNoSuggestions"
                 android:background="@android:color/transparent"
                 android:hint="Title"/>
             <View
@@ -97,10 +97,28 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/etQueryAskQuery"
+                android:layout_height="50dp"
+                android:id="@+id/etTimePostEvent"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:inputType="textNoSuggestions"
                 android:background="@android:color/transparent"
-                android:hint="Ask your question?"
+                android:hint="Time"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/etEventPostEvent"
+                android:background="@android:color/transparent"
+                android:hint="Event Details?"
                 android:textSize="17dp"
                 android:gravity="start"
                 android:inputType="textNoSuggestions|textMultiLine"
@@ -109,18 +127,6 @@
                 android:layout_marginRight="15dp"
 
                 />
-
         </LinearLayout>
-        <ProgressBar
-            android:id="@+id/pbAskQuery"
-            android:layout_width="80dip"
-            android:layout_height="80dip"
-            android:maxHeight="20dp"
-            android:visibility="invisible"
-            android:layout_centerInParent="true"
-            android:background="@drawable/progressbar_background"
-            android:progressDrawable="@drawable/progressbar_default"
-            />
     </RelativeLayout>
-
 </LinearLayout>

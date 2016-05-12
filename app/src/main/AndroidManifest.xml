@@ -105,6 +105,13 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".PostEvent">
+            <intent-filter>
+                <action android:name="com.hakunamatata.pradeep.noworries.POSTEVENT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
 
     </application>
 

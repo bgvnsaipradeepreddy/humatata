@@ -283,4 +283,26 @@ public class JsonParser {
         return output;
     }
 
+    public static ArrayList<ModelDataEvent> parseEvents(String queries) throws  JSONException {
+
+        ArrayList<ModelDataEvent> output = new ArrayList<>();
+        JSONObject mainJsonObject = new JSONObject(queries);
+        //JSONObject jsonObject =mainJsonObject.getJSONObject("status");
+        Boolean status = mainJsonObject.getBoolean("status");
+        JSONArray jsonArray = mainJsonObject.getJSONArray("events");
+
+        if(status == true){
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectChild = jsonArray.getJSONObject(i);
+                ModelDataEvent modelDataEvent = new ModelDataEvent();
+                modelDataEvent.setUserName(jsonObjectChild.getString("user_name"));
+                modelDataEvent.setEventTitle(jsonObjectChild.getString("event_title"));
+                modelDataEvent.setEventDetails(jsonObjectChild.getString("event_details"));
+                output.add(modelDataEvent);
+            }
+        }
+        return output;
+    }
+
+
 }

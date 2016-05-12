@@ -86,4 +86,19 @@ public class JsonUtility {
     }
 
 
+    public static  String constructJSONEvent(Map<String,String> data) throws JSONException {
+
+        JSONObject obj = new JSONObject();
+
+        obj.put("user_id",data.get("user_id"));
+        obj.put("place_id",data.get("place_id"));
+        obj.put("date",data.get("date"));
+        obj.put("event",data.get("event"));
+        obj.put("event_title",data.get("event_title"));
+
+
+        return obj.toString();
+
+    }
+
 }
