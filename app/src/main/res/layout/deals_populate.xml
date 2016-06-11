@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Willing to sell my 2 year old red color apache 220cc. "
+            android:id="@+id/tvTitlePopulateDeals"
+            android:layout_margin="10dp"
+            android:textSize="18dp"
+            android:textColor="@android:color/black"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Posted:"
+            android:textSize="15dp"
+            android:id="@+id/tvPostedPopulateDeals"
+            android:layout_below="@+id/tvTitlePopulateDeals"
+            android:layout_alignLeft="@+id/tvTitlePopulateDeals"
+            android:layout_alignStart="@+id/tvTitlePopulateDeals" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="45 minutes ago"
+            android:textSize="15dp"
+            android:id="@+id/tvDaysPopulateDeals"
+            android:layout_alignBottom="@+id/tvPostedPopulateDeals"
+            android:layout_toRightOf="@+id/tvPostedPopulateDeals"
+            android:layout_toEndOf="@+id/tvPostedPopulateDeals" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Availability:"
+            android:textSize="15dp"
+
+            android:id="@+id/tvAvailabilityPopulateDeals"
+            android:layout_alignTop="@+id/tvDaysPopulateDeals"
+            android:layout_toRightOf="@+id/tvDaysPopulateDeals"
+            android:layout_toEndOf="@+id/tvDaysPopulateDeals"
+            android:layout_marginLeft="47dp"
+            android:layout_marginStart="47dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:id="@+id/ivAvailabilityPopulateDeals"
+            android:src="@drawable/correct_icon"
+            android:layout_alignBottom="@+id/tvAvailabilityPopulateDeals"
+            android:layout_toRightOf="@+id/tvAvailabilityPopulateDeals"
+            android:layout_toEndOf="@+id/tvAvailabilityPopulateDeals" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_below="@+id/tvPostedPopulateDeals"
+            android:layout_marginTop="10dp"
+            android:layout_alignRight="@+id/tvTitlePopulateDeals"
+            android:layout_alignEnd="@+id/tvTitlePopulateDeals"
+            android:id="@+id/vPopulateDeals" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ivImagePopulateDeals"
+            android:layout_below="@+id/vPopulateDeals"
+            android:layout_margin="7dp"
+            android:layout_alignLeft="@+id/tvPostedPopulateDeals"
+            android:layout_alignStart="@+id/tvPostedPopulateDeals"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:id="@+id/tvUserPopulateDeals"
+            android:layout_below="@id/vPopulateDeals"
+            android:layout_toEndOf="@+id/ivImagePopulateDeals" />
+
+
+    </RelativeLayout>
+</LinearLayout>

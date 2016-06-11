@@ -36,7 +36,9 @@
 
     <style name="MyWidget.Toolbar" parent="Widget.AppCompat.Toolbar">
         <item name="navigationIcon">?homeAsUpIndicator</item>
+
     </style>
+
 
 
 </resources>

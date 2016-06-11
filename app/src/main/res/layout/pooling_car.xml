@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
+<include android:id="@+id/tbIncludeCarPooling"
+layout="@layout/toolbar_button"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etStartCarPooling"
+            android:singleLine="true"
+            android:hint="Select Location"
+            android:layout_toLeftOf="@+id/bStartCarPooling"
+            android:layout_toStartOf="@+id/bStartCarPooling" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go"
+            android:id="@+id/bStartCarPooling"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+
+    <fragment
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fCarPooling"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_below="@+id/tbIncludeCarPooling"
+    >
+</fragment>
+
+</LinearLayout>

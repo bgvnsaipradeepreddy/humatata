@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/tvDateHeaderQueryAnswer"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ivHeaderQueryAnswer"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tvDateHeaderQueryAnswer"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvNameHeaderQueryAnswer"
+            android:layout_below="@+id/tvDateHeaderQueryAnswer"
+            android:layout_toEndOf="@+id/ivHeaderQueryAnswer"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/tvQueryHeaderQueryAnswer"
+            android:text="giri venkata nagendra sai pradeep reddy"
+            android:layout_below="@+id/ivHeaderQueryAnswer"
+            android:layout_alignParentStart="true"
+            android:textColor="@android:color/black"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:clickable="true"/>
+        <com.hakunamatata.pradeep.noworries.ExpandableTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I have a food plus card where can i find a store in tirupati where i can buy both electronic good and also food items. many shops where not accepting this kind of cards. Please suggest something. Even if someone can use this foodplus cards and provide the money"
+            android:layout_marginTop="10dp"
+            android:textSize="16dp"
+            android:textColor="@android:color/black"
+            android:id="@+id/etvDescriptionHeaderQueryAnswer"
+            android:layout_below="@+id/tvQueryHeaderQueryAnswer"
+            android:layout_alignParentStart="true"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bookmark"
+        android:textSize="17dp"
+        android:id="@+id/tvBookmarkHeaderQueryAnswer"
+        android:layout_alignBottom="@+id/etvDescriptionHeaderQueryAnswer"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/etHeaderQueryAnswer"
+        android:layout_margin="7dp"
+        android:background="@drawable/border_layout"
+        android:textSize="15dp"
+        android:hint="Write your answer"
+        android:focusable="false"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Answers"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="27dp"
+        android:paddingTop="5dp"
+        android:textStyle="bold"
+        android:id="@+id/tvAnserwQueryAnswer"/>
+
+</LinearLayout>

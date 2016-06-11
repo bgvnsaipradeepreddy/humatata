@@ -58,6 +58,7 @@ public class UserEntities extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Deals"));
         tabLayout.addTab(tabLayout.newTab().setText("ChatRoom"));
         tabLayout.addTab(tabLayout.newTab().setText("Trivia"));
+        tabLayout.addTab(tabLayout.newTab().setText("Lets Go"));
         //tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         PagerAdapter adapter = new PagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());
@@ -134,13 +135,16 @@ public class UserEntities extends AppCompatActivity {
                     return FragmentEvent.newInstance(userId,placeId,selectedPlace);
                 case 3:
                     //return FragmentEvent.newInstance(userId,selectedPlace);
-                    return FragmentQuery.newInstance(userId,placeId,selectedPlace);
+                    return FragmentDeals.newInstance(userId,placeId,selectedPlace);
                 case 4:
                     //return FragmentDeals.newInstance(userId,selectedPlace);
-                    return FragmentQuery.newInstance(userId,placeId,selectedPlace);
+                    return FragmentGroupChat.newInstance(userId,placeId,selectedPlace);
                 case 5:
                     //return FragmentChatRoom.newInstance(userId,selectedPlace);
                     return FragmentClimate.newInstance(userId,placeId,selectedPlace);
+                case 6:
+                    //return FragmentChatRoom.newInstance(userId,selectedPlace);
+                    return FragmentLetsGo.newInstance(userId,placeId,selectedPlace);
                 default:
                     return null;
             }

@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -17,6 +18,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Shader;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -42,6 +44,8 @@ import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.GoogleMap;
+
 import org.json.JSONException;
 
 import java.text.SimpleDateFormat;
@@ -56,6 +60,7 @@ public class FragmentQuery extends Fragment {
     int userId;
     int placeId;
     EditText search;
+    TextView tvComments;
     ProgressBar pbQuery;
     ListView listView;
     PopulateQueries populateQueries;
@@ -65,6 +70,8 @@ public class FragmentQuery extends Fragment {
     View header;
     ArrayList<String> questions = new ArrayList<String>();
     ArrayList<String> description = new ArrayList<String>();
+    ArrayList<Integer> queryList = new ArrayList<>();
+
 
     public static FragmentQuery newInstance(int userId, int placeId, String location) {
 
@@ -92,9 +99,11 @@ public class FragmentQuery extends Fragment {
                              Bundle savedInstanceState) {
         location = getArguments().getString("place");
         userId = getArguments().getInt("userId");
+        Log.e("fragmemtq","frq"+userId);
         placeId = getArguments().getInt("placeId");
         view = inflater.inflate(R.layout.query_fragment, container, false);
         pbQuery = (ProgressBar) view.findViewById(R.id.pbFragmentQuery);
+
         pbQuery.setVisibility(View.VISIBLE);
         Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.tbIncludeUserEntities);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
@@ -112,6 +121,7 @@ public class FragmentQuery extends Fragment {
                 bundle.putString("place", location);
                 bundle.putInt("place_id", placeId);
                 bundle.putInt("user_id", userId);
+
                 Intent intent = new Intent("com.hakunamatata.pradeep.noworries.ASKQUERY");
                 //Intent intent = new Intent("com.hakunamatata.hakunamatata.EXPANDEXAMPLE");
                 intent.putExtras(bundle);
@@ -239,7 +249,13 @@ public class FragmentQuery extends Fragment {
         ArrayList<String> quest = new ArrayList<String>();
         ArrayList<String> quest_description = new ArrayList<String>();
         ArrayList<ModelDataQuery> queries = new ArrayList<>();
-        int userId;
+        ArrayList<Integer> queryList = new ArrayList<>();
+        ArrayList<String> titleList  = new ArrayList<String>();
+        ArrayList<String> contentList = new ArrayList<String>();
+        ArrayList<String>  imageList = new ArrayList<String>();
+        ArrayList<String>  nameList = new ArrayList<String>();
+
+        String queryTitle,queryContent,userImage,userName;
         ImageButton bookmark;
 
         public PopulateQueries(Activity activity, ArrayList<ModelDataQuery> queries) {
@@ -249,10 +265,22 @@ public class FragmentQuery extends Fragment {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             ModelDataQuery modelDataQuery = new ModelDataQuery();
             modelDataQuery = queries.get(position);
             convertView = li.inflate(R.layout.queries_populate, parent, false);
+            int queryId = modelDataQuery.getQueryId();
+            queryList.add(queryId);
+            queryTitle = modelDataQuery.getQueryTitle();
+            titleList.add(queryTitle);
+            queryContent = modelDataQuery.getQueryContent();
+            contentList.add(queryContent);
+            userImage = modelDataQuery.getImageLocation();
+            imageList.add(userImage);
+            userName = modelDataQuery.getUserName();
+            nameList.add(userName);
+            Log.e("queryid1","q1"+userImage+queryTitle+queryContent+queryId);
+
             TextView query = (TextView) convertView.findViewById(R.id.tvQueryPopulateQueries);
             //TextView date = (TextView) convertView.findViewById(R.id.date_query);
             ExpandableTextView expandableTextView = (ExpandableTextView) convertView.findViewById(R.id.etvDescriptionPopulateQueries);
@@ -260,11 +288,23 @@ public class FragmentQuery extends Fragment {
 
                 @Override
                 public void onClick(View v) {
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("query_id", queryList.get(position));
+                    bundle.putInt("user_id",userId);
+                    Log.e("queryanswer","query"+userId);
+                    bundle.putString("query_title",titleList.get(position));
+                    bundle.putString("query_content",contentList.get(position));
+                    bundle.putString("user_name",nameList.get(position));
+                    bundle.putString("user_image",imageList.get(position));
                     Intent intent = new Intent("com.hakunamatata.pradeep.noworries.QUERYANSWERS");
-                    getContext().startActivity(intent);
+                    //Intent intent = new Intent("com.hakunamatata.hakunamatata.EXPANDEXAMPLE");
+                    intent.putExtras(bundle);
+                    startActivity(intent);
 
                 }
             });
+
+
             ImageView img1 = (ImageView) convertView.findViewById(R.id.ivPopulateQueries);
             Bitmap decodedByte;
             if(modelDataQuery.getImageLocation().equals("no value")){
@@ -295,20 +335,25 @@ public class FragmentQuery extends Fragment {
             Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap
                     .getHeight(), Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(output);
+            int width = bitmap.getWidth();
+            int height = bitmap.getHeight();
+            int borderWidth=2;
+            BitmapShader shader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
 
-            final int color = 0xff424242;
-            final Paint paint = new Paint();
-            final Rect rect = new Rect(0, 0, bitmap.getWidth() - 20, bitmap.getHeight() - 20);
-            final RectF rectF = new RectF(rect);
-            final float roundPx = pixels;
-
+            Paint paint = new Paint();
             paint.setAntiAlias(true);
-            canvas.drawARGB(0, 0, 0, 0);
-            paint.setColor(color);
-            canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
+            paint.setShader(shader);
 
-            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-            canvas.drawBitmap(bitmap, rect, rect, paint);
+            //Canvas canvas = new Canvas(canvasBitmap);
+            float radius = width > height ? ((float) height) / 2f : ((float) width) / 2f;
+            radius = radius-10;
+            Log.e("radius","radius"+radius);
+            canvas.drawCircle(width / 2, height / 2, radius, paint);
+            paint.setShader(null);
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setColor(Color.BLACK);
+            paint.setStrokeWidth(borderWidth);
+            canvas.drawCircle(width / 2, height / 2, radius - borderWidth / 2, paint);
             return output;
         }
 

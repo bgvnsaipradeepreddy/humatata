@@ -47,6 +47,7 @@ import org.json.JSONException;
 import java.io.ByteArrayOutputStream;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by srinu on 11/29/2015.
@@ -62,7 +63,7 @@ public class UserProfile extends AppCompatActivity {
     TextInputLayout phonedisplay,namedisplay,agedisplay,professiondisplay,biodisplay,descriptiondisplay;
     TextView wordcount;
     RadioGroup radioGroup;
-    RadioButton radioButton;
+    RadioButton male,female;
     Button bDone;
     int userId;
     String username;
@@ -104,11 +105,15 @@ public class UserProfile extends AppCompatActivity {
         age.addTextChangedListener(new GenericTextWatcher(age));
         profession.addTextChangedListener(new GenericTextWatcher(profession));
         description.addTextChangedListener(new GenericTextWatcher(description));
-        int selectedId = radioGroup.getCheckedRadioButtonId();
-        radioButton = (RadioButton) findViewById(selectedId);
+        male = (RadioButton) findViewById(R.id.rbMaleUserProfile);
+        female = (RadioButton) findViewById(R.id.rbFemaleUserProfile);
 
 
-
+        RequestPackage requestPackage = new RequestPackage();
+        requestPackage.setMethod("GET");
+        requestPackage.setUri("http://192.168.42.49:8080/noworries/webapi/profile/getuserprofile");
+        requestPackage.setParam("user_id", String.valueOf(userId));
+        new GetProfileThread().execute(requestPackage);
 
         userProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -174,10 +179,10 @@ public class UserProfile extends AppCompatActivity {
                 requestPackage.setParam("user_description",userDescription);
                 requestPackage.setParam("user_age",userAge);
                 requestPackage.setParam("user_id",String.valueOf(userId));
-                if(radioButton.getText().equals("male")){
+                if(male.isChecked()){
                     requestPackage.setParam("user_gender","m");
                 }
-                else if(radioButton.getText().equals("female")){
+                else if(female.isChecked()){
                     requestPackage.setParam("user_gender","f");
                 }else {
                     requestPackage.setParam("user_gender",null);
@@ -302,6 +307,82 @@ public class UserProfile extends AppCompatActivity {
             else {
                 Toast.makeText(UserProfile.this,"Please try after sometime",Toast.LENGTH_LONG).show();
             }
+        }
+    }
+
+    private class GetProfileThread extends AsyncTask<RequestPackage,String,String>{
+
+
+        @Override
+        protected String doInBackground(RequestPackage... params)
+        {
+            HttpManager httpManager = new HttpManager();
+            String data = httpManager.getData(params[0]);
+            return data;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            JsonParser jsonParser = new JsonParser();
+            List<String> result = new ArrayList<>();
+            try {
+                result  = jsonParser.parseUserProfileData(s);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if(result.get(0) == null){
+
+            }else {
+                name.setText(result.get(0));
+            }
+            if(result.get(1) == null){
+
+            }else {
+                phone.setText(result.get(1));
+            }
+            if(result.get(2) == "m"){
+                male.setSelected(true);
+                female.setSelected(false);
+            }else if(result.get(2) == "f"){
+                male.setSelected(false);
+                female.setSelected(true);
+            }else {
+                male.setSelected(false);
+                female.setSelected(false);
+            }
+            if(result.get(3) == null){
+
+            }else {
+                age.setText(result.get(3));
+            }
+
+            if(result.get(4) == "") {
+            }else {
+                biography.setText(result.get(4));
+            }
+
+            if(result.get(5) == null){
+
+            }else {
+                profession.setText(result.get(5));
+            }
+            if(result.get(6) == null){
+
+            }else {
+                description.setText(result.get(6));
+            }
+            Bitmap decodedByte;
+
+            if(result.get(7) == null){
+                decodedByte = BitmapFactory.decodeResource(UserProfile.this.getResources(),
+                        R.drawable.myprofile_black);
+            }else {
+                byte[] decodedString = Base64.decode(result.get(7), Base64.DEFAULT);
+                decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+
+            }
+            userProfile.setImageBitmap(decodedByte);
         }
     }
 }

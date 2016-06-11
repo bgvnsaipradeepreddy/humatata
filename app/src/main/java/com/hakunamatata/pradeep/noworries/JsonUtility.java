@@ -58,6 +58,20 @@ public class JsonUtility {
     }
 
 
+    public static  String constructJSONQueryAnswer(Map<String,String> data) throws JSONException {
+
+        JSONObject obj = new JSONObject();
+
+        obj.put("query_id",data.get("query_id"));
+        obj.put("user_id",data.get("user_id"));
+        obj.put("query_answer",data.get("query_answer"));
+
+
+        return obj.toString();
+
+    }
+
+
     public static  String constructJSONEmergency(Map<String,String> data) throws JSONException {
 
         JSONObject obj = new JSONObject();
@@ -86,6 +100,7 @@ public class JsonUtility {
     }
 
 
+
     public static  String constructJSONEvent(Map<String,String> data) throws JSONException {
 
         JSONObject obj = new JSONObject();
@@ -100,5 +115,7 @@ public class JsonUtility {
         return obj.toString();
 
     }
+
+
 
 }

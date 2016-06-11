@@ -8,11 +8,20 @@ import java.util.Date;
 public class ModelDataQuery {
 
 
+    private int queryId;
     private String userName;
     private String datePosted;
     private String queryTitle;
     private String queryContent;
     private String imageLocation;
+
+    public int getQueryId() {
+        return queryId;
+    }
+
+    public void setQueryId(int queryId) {
+        this.queryId = queryId;
+    }
 
     public String getUserName() {
         return userName;

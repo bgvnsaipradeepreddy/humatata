@@ -434,7 +434,7 @@ public class PostEvent extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            Toast.makeText(PostEvent.this, "Query has been successfully posted", Toast.LENGTH_LONG).show();
+            Toast.makeText(PostEvent.this, "Event has been successfully posted", Toast.LENGTH_LONG).show();
             finish();
 
 

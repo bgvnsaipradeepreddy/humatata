@@ -10,6 +10,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -199,6 +200,29 @@ public class JsonParser {
         return result;
     }
 
+    public static List<String> parseUserProfileData(String content) throws JSONException {
+
+        List<String> output = new ArrayList<>();
+        Log.e("parse",content);
+        JSONObject mainJsonObject = new JSONObject(content);
+        JSONArray jsonArray = mainJsonObject.getJSONArray("user_profile");
+
+
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+            output.add(jsonObject.getString("user_name")==null?"":jsonObject.getString("user_name"));
+            output.add(jsonObject.getString("user_phoneno")==null?"":jsonObject.getString("user_phoneno"));
+            output.add(jsonObject.getString("user_gender")==null?"":jsonObject.getString("user_gender"));
+            output.add(jsonObject.getString("user_age")==null?"":jsonObject.getString("user_age"));
+            output.add(jsonObject.getString("user_biography")==null?"":jsonObject.getString("user_biography"));
+            output.add(jsonObject.getString("user_profession")==null?"":jsonObject.getString("user_profession"));
+            output.add(jsonObject.getString("user_info")==null?"":jsonObject.getString("user_info"));
+            output.add(jsonObject.getString("user_image")==null?"":jsonObject.getString("user_image"));
+        }
+
+        return output;
+    }
+
     public static ArrayList<ModelDataQuery> parseQueries(String queries) throws  JSONException {
 
         ArrayList<ModelDataQuery> output = new ArrayList<>();
@@ -211,12 +235,36 @@ public class JsonParser {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObjectChild = jsonArray.getJSONObject(i);
                 ModelDataQuery modelDataQuery = new ModelDataQuery();
+                modelDataQuery.setQueryId(jsonObjectChild.getInt("query_id"));
                 modelDataQuery.setUserName(jsonObjectChild.getString("user_name"));
                 modelDataQuery.setDatePosted(jsonObjectChild.getString("date_created"));
                 modelDataQuery.setImageLocation(jsonObjectChild.getString("user_image"));
                 modelDataQuery.setQueryTitle(jsonObjectChild.getString("query_title"));
                 modelDataQuery.setQueryContent(jsonObjectChild.getString("query_content"));
                 output.add(modelDataQuery);
+            }
+        }
+        return output;
+    }
+
+
+    public static ArrayList<ModelDataQueryAnswer> parseQueryAnswers(String data) throws  JSONException {
+
+        ArrayList<ModelDataQueryAnswer> output = new ArrayList<>();
+        JSONObject mainJsonObject = new JSONObject(data);
+        //JSONObject jsonObject =mainJsonObject.getJSONObject("status");
+        Boolean status = mainJsonObject.getBoolean("status");
+        JSONArray jsonArray = mainJsonObject.getJSONArray("query_answers");
+
+        if(status == true){
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectChild = jsonArray.getJSONObject(i);
+                ModelDataQueryAnswer modelDataQueryAnswer = new ModelDataQueryAnswer();
+                modelDataQueryAnswer.setUserName(jsonObjectChild.getString("user_name"));
+                //modelDataTrivia.setDatePosted(jsonObjectChild.getString("date_created"));
+                modelDataQueryAnswer.setImageLocation(jsonObjectChild.getString("user_image"));
+                modelDataQueryAnswer.setDescription(jsonObjectChild.getString("description"));
+                output.add(modelDataQueryAnswer);
             }
         }
         return output;
@@ -303,6 +351,28 @@ public class JsonParser {
         }
         return output;
     }
+
+    public static ArrayList<ModelDataDeal> parseDeals(String queries) throws  JSONException {
+
+        ArrayList<ModelDataDeal> output = new ArrayList<>();
+        JSONObject mainJsonObject = new JSONObject(queries);
+        //JSONObject jsonObject =mainJsonObject.getJSONObject("status");
+        Boolean status = mainJsonObject.getBoolean("status");
+        JSONArray jsonArray = mainJsonObject.getJSONArray("deals");
+
+        if(status == true){
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectChild = jsonArray.getJSONObject(i);
+                ModelDataDeal modelDataDeal = new ModelDataDeal();
+                modelDataDeal.setUserName(jsonObjectChild.getString("user_name"));
+                modelDataDeal.setDealTitle(jsonObjectChild.getString("deal_title"));
+                modelDataDeal.setDealDetails(jsonObjectChild.getString("deal_details"));
+                output.add(modelDataDeal);
+            }
+        }
+        return output;
+    }
+
 
 
 }

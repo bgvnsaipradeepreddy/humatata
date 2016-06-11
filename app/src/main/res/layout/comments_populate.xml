@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:minWidth="300dp"
+    android:minHeight="190dp"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/tvDatePopulateComments"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="7dp"
+        android:layout_alignParentStart="true"
+        />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivPopulateComments"
+        android:layout_marginLeft="7dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvDatePopulateComments"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvNamePopulateComments"
+        android:layout_below="@+id/tvDatePopulateComments"
+        android:layout_toEndOf="@+id/ivPopulateComments"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        />
+    <com.hakunamatata.pradeep.noworries.ExpandableTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I have a food plus card where can i find a store in tirupati where i can buy both electronic good and also food items. many shops where not accepting this kind of cards. Please suggest something. Even if someone can use this foodplus cards and provide the money"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:layout_marginLeft="7dp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/ivPopulateComments"
+        android:id="@+id/etvDescriptionPopulateComments"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reply"
+        android:layout_marginLeft="7dp"
+        android:id="@+id/tvCommentsPopulateComments" android:textSize="13dp"
+        android:layout_below="@+id/etvDescriptionPopulateComments"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"/>
+
+</RelativeLayout>

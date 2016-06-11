@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    >
+
+    <include android:id="@+id/tbIncludePoolRequest"
+        layout="@layout/toolbar_button"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="30dp">
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilStartPoolRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/etStartPoolRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Starting From"
+            android:singleLine="true"
+            android:inputType="textEmailAddress"/>
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEndPoolRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/tilStartPoolRequest">
+
+            <EditText
+                android:id="@+id/etEndPoolRequest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Going To"
+                android:singleLine="true"
+                android:inputType="textEmailAddress"/>
+        </android.support.design.widget.TextInputLayout>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_directions_car_black_24dp"
+            android:id="@+id/rbcar" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_motorcycle_black_24dp"
+            android:id="@+id/rbmotorcycle"
+            android:layout_marginLeft="20dp"/>
+
+    </LinearLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilNoOfPersonsPoolRequest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etNoOfPersonsPoolRequest"
+        android:hint="No of persons allowed"
+         />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilCostPoolRequest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etCostPoolRequest"
+        android:hint="Cost for each person"
+        />
+    </android.support.design.widget.TextInputLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/border_selector"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etCommentPoolRequest"
+            android:background="@android:color/transparent"
+            android:hint="Comments about the ride"
+            />
+    </LinearLayout>
+
+</LinearLayout>
